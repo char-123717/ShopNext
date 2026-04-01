@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+Access here: https://shop-next-blue-seven.vercel.app
+
 # ShopNext — E-Commerce Web App
 
 Modern e-commerce web application built with **Next.js 16 (App Router)**, featuring hybrid SSR/CSR rendering, Redux state management, and a fully responsive dark/light theme.
@@ -256,6 +257,3 @@ npm start
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# ShopNext
->>>>>>> 59d1926a214f08ed68065b252645139730e6df09
