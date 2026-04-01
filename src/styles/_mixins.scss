@@ -52,13 +52,6 @@
     }
 }
 
-// Glass morphism effect
-@mixin glass($opacity: 0.8) {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-
 // Gradient text
 @mixin gradient-text {
     background: $primary-gradient;

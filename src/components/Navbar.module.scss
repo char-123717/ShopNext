@@ -56,8 +56,8 @@
         }
 
         &:hover {
-            color: $primary;
-            background: rgba($primary, 0.06);
+            color: var(--color-nav-a);
+            background: var(--color-nav-a-hover);
         }
     }
 }
