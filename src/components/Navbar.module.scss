@@ -1,0 +1,63 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.navbar {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease, box-shadow $transition-base;
+    box-shadow: var(--shadow-sm);
+}
+
+.navContent {
+    @include flex-between;
+    height: 64px;
+
+    @include md {
+        height: 72px;
+    }
+}
+
+.logo {
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    @include gradient-text;
+    flex-shrink: 0;
+
+    @include md {
+        font-size: 1.35rem;
+    }
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    @include md {
+        gap: $spacing-xs;
+    }
+
+    a {
+        font-weight: 500;
+        font-size: 0.75rem;
+        color: var(--color-text-light);
+        padding: $spacing-xs $spacing-sm;
+        border-radius: $radius-md;
+        transition: all $transition-fast;
+        white-space: nowrap;
+
+        @include md {
+            font-size: 0.9rem;
+            padding: $spacing-sm $spacing-md;
+        }
+
+        &:hover {
+            color: $primary;
+            background: rgba($primary, 0.06);
+        }
+    }
+}

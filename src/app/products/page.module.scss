@@ -1,0 +1,122 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.productsPage {
+  padding: $spacing-2xl 0 $spacing-3xl;
+}
+
+.heading {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: $spacing-lg;
+  letter-spacing: -0.02em;
+
+  @include md {
+    font-size: 2.25rem;
+  }
+}
+
+// Search & Filter Controls
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+
+  @include md {
+    flex-direction: row;
+  }
+}
+
+.searchInput {
+  flex: 1;
+  padding: $spacing-md $spacing-lg;
+  border: 2px solid var(--color-border-light);
+  border-radius: $radius-lg;
+  font-size: 0.95rem;
+  outline: none;
+  background: var(--color-surface);
+  transition: all $transition-fast;
+
+  &::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.1);
+  }
+}
+
+.categorySelect {
+  padding: $spacing-md $spacing-lg;
+  border: 2px solid var(--color-border-light);
+  border-radius: $radius-lg;
+  font-size: 0.95rem;
+  background: var(--color-surface);
+  outline: none;
+  cursor: pointer;
+  min-width: 220px;
+  color: var(--color-text);
+  transition: all $transition-fast;
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.1);
+  }
+}
+
+// Status messages
+.status {
+  text-align: center;
+  color: var(--color-text-light);
+  padding: $spacing-3xl 0;
+  font-size: 1.1rem;
+}
+
+// Product Grid
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+
+  @include sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Pagination
+.pagination {
+  @include flex-centre;
+  gap: $spacing-md;
+  margin-top: $spacing-2xl;
+  padding: $spacing-md 0;
+
+  button {
+    @include btn-primary;
+    padding: $spacing-sm $spacing-xl;
+    font-size: 0.9rem;
+
+    &:disabled {
+      background: var(--color-bg-secondary);
+      color: var(--color-text-muted);
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+  }
+}
+
+.pageInfo {
+  font-weight: 600;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}

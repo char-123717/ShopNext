@@ -1,0 +1,51 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.wishlistPage {
+  padding: $spacing-2xl 0 $spacing-3xl;
+}
+
+.heading {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: $spacing-xl;
+  letter-spacing: -0.02em;
+}
+
+.empty {
+  text-align: center;
+  padding: 100px 0;
+
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: var(--color-text-light);
+    margin-bottom: $spacing-xl;
+    font-size: 1.05rem;
+  }
+}
+
+.shopLink {
+  @include btn-primary;
+  display: inline-block;
+  padding: $spacing-md $spacing-2xl;
+  font-size: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+
+  @include sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

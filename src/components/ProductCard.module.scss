@@ -1,0 +1,85 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.card {
+  @include card;
+  border-color: var(--color-border-dark);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+
+    .image {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.imageWrapper {
+  @include flex-centre;
+  background: var(--color-bg-secondary);
+  padding: $spacing-lg;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: $radius-xl $radius-xl 0 0;
+}
+
+.image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  transition: transform $transition-slow;
+}
+
+.info {
+  padding: $spacing-md $spacing-lg $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  flex: 1;
+}
+
+.category {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: $primary;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+
+.title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+  @include truncate(2);
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-top: auto;
+  padding-top: $spacing-sm;
+}
+
+.price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: $primary-dark;
+}
+
+.originalPrice {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.rating {
+  font-size: 0.8rem;
+  color: $secondary;
+  font-weight: 500;
+}

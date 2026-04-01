@@ -1,0 +1,33 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.button {
+  @include flex-centre;
+  gap: $spacing-sm;
+  padding: $spacing-md $spacing-2xl;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  border-radius: $radius-lg;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 2px solid var(--color-border-red);
+  cursor: pointer;
+  transition: all $transition-base;
+
+  @include md {
+    width: auto;
+  }
+
+  &:hover {
+    border-color: $danger;
+    color: $danger;
+    background: var(--color-danger-light);
+  }
+
+  &.active {
+    border-color: $danger;
+    color: $danger;
+    background: var(--color-danger-light);
+  }
+}

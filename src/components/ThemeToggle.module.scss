@@ -1,0 +1,30 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.toggle {
+  @include flex-centre;
+  width: 32px;
+  height: 32px;
+  border-radius: $radius-full;
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-light);
+  cursor: pointer;
+  transition: all $transition-fast;
+  flex-shrink: 0;
+
+  @include md {
+    width: 40px;
+    height: 40px;
+  }
+
+  &:hover {
+    background: var(--color-border);
+    transform: rotate(15deg);
+  }
+}
+
+.icon {
+  @include flex-centre;
+  line-height: 0;
+}

@@ -1,0 +1,112 @@
+@use "variables" as *;
+
+// Theme CSS Custom Properties
+:root {
+    --color-bg: #f8fafc;
+    --color-bg-secondary: #f1f5f9;
+    --color-surface: #ffffff;
+    --color-text: #111827;
+    --color-text-light: #6b7280;
+    --color-text-muted: #9ca3af;
+    --color-border: #e2e8f0;
+    --color-border-light: #f1f5f9;
+    --color-border-red: #ef4444;
+    --color-border-dark: #000000;
+    --color-danger-light: #fef2f2;
+    --color-success-light: #f0fdf4;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] {
+    --color-bg: #0f172a;
+    --color-bg-secondary: #1e293b;
+    --color-surface: #1e293b;
+    --color-text: #f1f5f9;
+    --color-text-light: #94a3b8;
+    --color-text-muted: #64748b;
+    --color-border: #334155;
+    --color-border-light: #283548;
+    --color-card-border: #ffffff;
+    --color-danger-light: #3b1111;
+    --color-success-light: #0a3520;
+    --glass-bg: rgba(15, 23, 42, 0.85);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.25), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color-scheme: light;
+
+    &[data-theme="dark"] {
+        color-scheme: dark;
+    }
+}
+
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: inherit;
+}
+
+input, select, textarea {
+    font-family: inherit;
+}
+
+::selection {
+    background: rgba($primary, 0.15);
+    color: $primary-dark;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+
+    @media (min-width: $sm) {
+        padding: 0 $spacing-lg;
+    }
+
+    @media (min-width: $md) {
+        padding: 0 $spacing-xl;
+    }
+}

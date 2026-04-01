@@ -1,0 +1,39 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.section {
+  padding: $spacing-3xl 0;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: $spacing-md;
+  margin-bottom: $spacing-xs;
+  letter-spacing: -0.02em;
+
+  @include md {
+    font-size: 2rem;
+  }
+}
+
+.sectionSubtitle {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  margin-left: $spacing-md;
+  margin-bottom: $spacing-xl;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+
+  @include sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

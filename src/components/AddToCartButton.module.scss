@@ -1,0 +1,14 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.button {
+  @include btn-primary;
+  padding: $spacing-md $spacing-2xl;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: $radius-lg;
+
+  @include md {
+    width: auto;
+  }
+}

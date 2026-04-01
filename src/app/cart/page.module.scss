@@ -1,0 +1,167 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.cartPage {
+  padding: $spacing-2xl 0 $spacing-3xl;
+}
+
+.heading {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: $spacing-xl;
+  letter-spacing: -0.02em;
+}
+
+.empty {
+  text-align: center;
+  padding: 100px 0;
+
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: var(--color-text-light);
+    margin-bottom: $spacing-xl;
+    font-size: 1.05rem;
+  }
+}
+
+.shopLink {
+  @include btn-primary;
+  display: inline-block;
+  padding: $spacing-md $spacing-2xl;
+  font-size: 1rem;
+}
+
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.cartItem {
+  @include card;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-lg;
+  padding: $spacing-lg;
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.itemImage {
+  flex-shrink: 0;
+
+  img {
+    object-fit: contain;
+    border-radius: $radius-md;
+  }
+}
+
+.itemInfo {
+  flex: 1;
+  min-width: 150px;
+}
+
+.itemTitle {
+  font-weight: 600;
+  display: block;
+  margin-bottom: $spacing-xs;
+  font-size: 1.05rem;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.itemPrice {
+  color: $primary-dark;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.itemActions {
+  @include flex-centre;
+  gap: $spacing-sm;
+
+  button {
+    background: var(--color-bg-secondary);
+    width: 36px;
+    height: 36px;
+    border-radius: $radius-md;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    @include flex-centre;
+    transition: all $transition-fast;
+
+    &:hover {
+      background: $primary;
+      color: $white;
+    }
+  }
+
+  span {
+    font-weight: 700;
+    min-width: 28px;
+    text-align: center;
+    font-size: 1.05rem;
+  }
+}
+
+.removeBtn {
+  color: $danger;
+  background: var(--color-danger-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $radius-md;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: $danger;
+    color: $white;
+  }
+}
+
+.summary {
+  margin-top: $spacing-xl;
+  padding: $spacing-xl;
+  @include card;
+  border-radius: $radius-2xl;
+}
+
+.totalRow {
+  @include flex-between;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: $spacing-lg;
+}
+
+.totalPrice {
+  font-size: 1.75rem;
+  font-weight: 800;
+  @include gradient-text;
+}
+
+.clearBtn {
+  background: var(--color-danger-light);
+  color: $danger;
+  padding: $spacing-sm $spacing-xl;
+  border-radius: $radius-md;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: $danger;
+    color: $white;
+  }
+}
