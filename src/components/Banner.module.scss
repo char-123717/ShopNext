@@ -2,7 +2,7 @@
 @use "@/styles/mixins" as *;
 
 .banner {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%);
+  background: var(--color-banner);
   color: $white;
   padding: $spacing-3xl $spacing-md;
   text-align: center;
